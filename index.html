@@ -643,7 +643,7 @@ function saveSearchResults() {
         questionIndex,
         answerBox: document.getElementById('answerBox').value,
 		answerBox2: document.getElementById('answerBox2').value,
-        answerBox3: document.getElementById('noteArea').value
+        noteArea: document.getElementById('noteArea').value
       };
       const blob = new Blob([JSON.stringify(data)], { type: 'application/json' });
       const link = document.createElement('a');
@@ -667,6 +667,7 @@ function saveSearchResults() {
           questionIndex = data.questionIndex || 0;
           document.getElementById('answerBox').value = data.answerBox || '';
           document.getElementById('answerBox2').value = data.answerBox2 || '';
+		  document.getElementById('noteArea').value = data.noteArea || '';
           displayQuestion();
           displayStats();
         };
@@ -703,7 +704,7 @@ function saveSearchResults() {
     questionIndex = data.questionIndex || 0;
     document.getElementById('answerBox').value = data.answerBox || '';
     document.getElementById('answerBox2').value = data.answerBox2 || '';
-
+	document.getElementById('noteArea').value = data.noteArea || '';
     displayQuestion();
     displayStats();
   } catch (error) {
