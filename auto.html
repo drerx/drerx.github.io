@@ -694,7 +694,7 @@ function saveSearchResults() {
     
 	async function autoLoadProgress() {
   try {
-    const response = await fetch('./indexauto.json');
+    const response = await fetch('./auto.json');
     if (!response.ok) throw new Error('File not found');
 
     const data = await response.json();
